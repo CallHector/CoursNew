@@ -1,0 +1,43 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/BP_ThirdPersonCharacterTP8.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/animReactionCoup_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort1_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort1.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort1_Skeleton.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort1_PhysicsAsset.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animAttaque_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animAttaque.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animAttaque_Skeleton.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animAttaque_PhysicsAsset.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort2_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort2.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort2_Skeleton.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animMort2_PhysicsAsset.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animReactionCoup_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animReactionCoup.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_body.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_hair.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animReactionCoup_Skeleton.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1002_Normal.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1002_Diffuse.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1001_Specular.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1001_Normal.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1001_Glossiness.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/Ch13_1001_Diffuse.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/AnimationsImported/animReactionCoup_PhysicsAsset.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/RetargetedAnimations/animAttaque_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/RetargetedAnimations/animMort1_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/RetargetedAnimations/animMort2_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/RetargetedAnimations/animReactionCoup_Anim.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/BP_EnemyTP8.uasset",
+				"C:/Users/cbanzet/Documents/GitHub/Moteurs de jeu/TP8/Content/TP8/WB_LifeBarTP8.uasset"
+			]
+		}
+	]
+}
