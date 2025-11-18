@@ -16,8 +16,10 @@ public class regard : MonoBehaviour
     void Update()
     {
         //   transform.LookAt(objet_cible.transform); //Suit la voiture du regard
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, objet_cible.transform.position , 20);
-
+        Vector3 FollowJoueur = Vector3.MoveTowards(objet_cible.transform.position, gameObject.transform.position,  10);
+        FollowJoueur.y = transform.position.y;
+        FollowJoueur.x = transform.position.x;
+        transform.position = FollowJoueur;
 
     }
 }
