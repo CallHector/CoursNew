@@ -108,7 +108,7 @@ public class ControleJoueur : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectile, transform.position, projectile.transform.rotation);
+            Instantiate(projectile, this.gameObject.transform.position, this.transform.rotation);
         }
             
     }

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class GestionCollisionitem : MonoBehaviour
 {
-    float vitesse = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +13,14 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * vitesse * Time.deltaTime);
-        if (transform.position.y > 30 || transform.position.y < -14)
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "joueur")
         {
-            Destroy(gameObject);
+            Debug.Log("Boom");
         }
     }
 }

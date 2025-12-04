@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class BallBehaviour : MonoBehaviour
     public float respawnMinAltitude;
     public float respawnMaxAltitude;
     public Vector3 startPosition;
+    public CamBehaviour cam;
+    bool onGround = false;
 
     Vector3 direction;
     Vector3 jump;
@@ -33,13 +36,18 @@ public class BallBehaviour : MonoBehaviour
     {
         float zAxis = Input.GetAxis("Vertical");
         float xAxis = Input.GetAxis("Horizontal");
-        
-       // transform.position = transform.position + new Vector3(xAxis, 0, zAxis) * Time.deltaTime * speed; //autre manière de bouger
-      
-       direction = new Vector3(xAxis, 0, zAxis);
+        direction = new Vector3 (xAxis, 0, zAxis);
+
+        // transform.position = transform.position + new Vector3(xAxis, 0, zAxis) * Time.deltaTime * speed; //autre manière de bouger
+
+        Quaternion rot = Quaternion.Euler(0, cam.camangleX, 0);
+       direction = rot * direction; 
+
+
+
        jump = new Vector3(0, 50, 0);
 
-        if (Input.GetKeyUp(KeyCode.Space)) //Jump
+        if (Input.GetKeyUp(KeyCode.Space) && onGround) //Jump
         {
             Jump();
         }
@@ -66,8 +74,28 @@ public class BallBehaviour : MonoBehaviour
             
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.CompareTag("Floor"))
+        {
+            onGround = true;
+            Debug.Log("au sol");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Floor"))
+        {
+            onGround = false;
+            
+        }
+    }
+
     void Jump() //jump
     {
-        rigidbody.AddForce(jump * speed, ForceMode.Force);
+        {
+            rigidbody.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        }
     }
 }
