@@ -309,10 +309,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: {x: 0, y: 5, z: -10}
-  ball: {fileID: 2070043309}
   camangleX: 0
   camangleY: 0
-  camSpeed: 2
+  camSpeedX: 5
+  camSpeedY: 5
   minRotY: 0
   maxRotY: 50
 --- !u!1 &386999368
@@ -729,7 +729,8 @@ MonoBehaviour:
   cooldown: 1
   bouletPrefab: {fileID: 6205452674966510124, guid: 94dfec72a770c544ea71103bc2dc8c8d,
     type: 3}
-  bouletInitSpeed: 1500
+  bouletInitSpeed: 50
+  poolSize: 100
 --- !u!136 &1265258205
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -924,6 +925,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 183205420}
   m_LocalEulerAnglesHint: {x: 0, y: 179.124, z: 0}
+--- !u!1 &1680090729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680090731}
+  - component: {fileID: 1680090730}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1680090730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680090729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a8d6570fdb7dc459ac975b89259bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  ball: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 9dae2b8bf6f44bc4da4b39ea267151de, type: 2}
+--- !u!4 &1680090731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680090729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5999999, y: 0.31739044, z: -1.7999992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792174362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,11 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 2070043311}
-  speed: 5
-  respawnMinAltitude: -20
-  respawnMaxAltitude: 10
   startPosition: {x: 0, y: 0, z: 0}
-  cam: {fileID: 330585549}
 --- !u!1 &2139005992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,3 +1480,4 @@ SceneRoots:
   - {fileID: 2512721322310883689}
   - {fileID: 1265258208}
   - {fileID: 183205420}
+  - {fileID: 1680090731}
