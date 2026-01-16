@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BallBehaviour : MonoBehaviour
@@ -9,6 +8,8 @@ public class BallBehaviour : MonoBehaviour
     public Rigidbody rigidbody;
     public Vector3 startPosition;
     bool onGround = false;
+    bool doubleJumped = false; //vérifie si on a déjà fait un double jump
+    bool canCrush = false; //vérifie si on a déjà fait un double jump
 
     Vector3 direction;
     Vector3 jump;
@@ -33,26 +34,65 @@ public class BallBehaviour : MonoBehaviour
         float  xAxis= Input.GetAxis("Vertical");
         float zAxis = Input.GetAxis("Horizontal");
         direction = new Vector3 (xAxis, 0, -zAxis);
-
+        
         // transform.position = transform.position + new Vector3(xAxis, 0, zAxis) * Time.deltaTime * speed; //autre manière de bouger
 
         Quaternion rot = Quaternion.Euler(0, GameManager.instance.cam.camangleX, 0);
        direction = rot * direction; 
+        
 
 
-
-       jump = new Vector3(0, 50, 0);
+        jump = new Vector3(0, 50, 0);
 
         if (Input.GetKeyUp(KeyCode.Space) && onGround) //Jump
         {
             Jump();
         }
 
-            //détecter la hauteur
-            //si la hauteur < seuil
-            //respawn
+        //DOUBLE JUMP
 
-            if (transform.position.y <= GameManager.instance.levelData.ballRespawnAltitude) //Si la balle est trop haute en l'air ou trop basse
+        if (Input.GetKeyUp(KeyCode.Space) && !onGround && !doubleJumped)  //si on n'est pas au sol et qu'on a pas déjà double jump
+        {
+            
+            Jump();
+            doubleJumped = true; //on set à true pour ne pas pouvoir le refaire
+            canCrush = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && !onGround && doubleJumped)  //si on n'est pas au sol et qu'on a pas déjà double jump
+        {
+            canCrush = true;
+        }
+
+        //CRUSH
+
+        if (Input.GetKeyUp(KeyCode.Space) && !onGround && canCrush)  //si on n'est pas au sol et qu'on a déjà double jump
+        {
+            rigidbody.AddForce(Vector3.down * 10, ForceMode.Impulse);
+            //crush = true; //on set à true pour ne pas pouvoir le refaire
+        }
+
+        //FREIN
+
+        if (Input.GetMouseButtonDown(0)) //Left Click
+        {
+            Debug.Log("Left Clicked");
+            rigidbody.velocity = Vector3.zero; //annule la vélocité linéaire (mais continue de rouler s'il n'y a pas de angular)
+            rigidbody.angularVelocity = Vector3.zero; // permet d'annuler' complètement la vélocité)
+        }
+
+        if (Input.GetMouseButtonDown(1)) //Right Click
+        {
+            Debug.Log("Right Clicked");
+            
+        }
+
+        if (Input.GetMouseButtonDown(2))  //Middle Click
+        {
+            Debug.Log("Middle Clicked");
+        }
+
+        if (transform.position.y <= GameManager.instance.levelData.ballRespawnAltitude) //Si la balle est trop haute en l'air ou trop basse
         {
             Respawn();
         }
@@ -75,6 +115,8 @@ public class BallBehaviour : MonoBehaviour
         if(collision.collider.CompareTag("Floor"))
         {
             onGround = true;
+            doubleJumped = false; //reset le double jump quand on est au sol
+            //crush = false; //reset le crush quand on est au sol
             Debug.Log("au sol");
         }
     }

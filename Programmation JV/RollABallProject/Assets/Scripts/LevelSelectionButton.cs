@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelSelectionButton : MonoBehaviour
 {
 
     public string sceneName;
+    [SerializeField] private TextMeshProUGUI levelText;
     public Image thumbnailImage;
     levelDataSO myLevel;
 
@@ -28,7 +30,11 @@ public class LevelSelectionButton : MonoBehaviour
     {
         myLevel = levelData;
         sceneName = levelData.sceneName;
-        thumbnailImage.sprite = levelData.levelThumbnail;   
+        thumbnailImage.sprite = levelData.levelThumbnail;
+        if (levelText != null)
+        {
+            levelText.text = levelData.sceneName; // levelText affiche le nom du level
+        }
     }
 
     public void LevelSelectButton()

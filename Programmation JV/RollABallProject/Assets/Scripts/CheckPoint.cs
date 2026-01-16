@@ -18,4 +18,9 @@ public class CheckPoint : MonoBehaviour
             ball.startPosition = transform.position;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
+    }
 }
